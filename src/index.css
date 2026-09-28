@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* CapacitaSaúde — institutional green healthcare palette */
+    --background: 120 13% 97%;
+    --foreground: 152 15% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 152 15% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 152 15% 17%;
+
+    /* Verde principal #2E7D5B */
+    --primary: 154 46% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Verde claro #E8F3ED */
+    --secondary: 147 31% 93%;
+    --secondary-foreground: 156 48% 24%;
+
+    --muted: 147 20% 95%;
+    --muted-foreground: 151 10% 42%;
+
+    /* Verde claro para destaques de saúde/treinamento */
+    --accent: 147 31% 93%;
+    --accent-foreground: 156 48% 24%;
+
+    --destructive: 0 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 45% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 75% 45%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 150 12% 90%;
+    --input: 150 12% 88%;
+    --ring: 154 46% 34%;
+
+    --chart-1: 154 46% 34%;
+    --chart-2: 156 48% 24%;
+    --chart-3: 142 38% 48%;
+    --chart-4: 147 28% 55%;
+    --chart-5: 38 75% 48%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 152 18% 10%;
+    --foreground: 120 10% 92%;
+    --card: 152 16% 14%;
+    --card-foreground: 120 10% 92%;
+    --popover: 152 16% 14%;
+    --popover-foreground: 120 10% 92%;
+    --primary: 154 40% 45%;
+    --primary-foreground: 152 20% 10%;
+    --secondary: 152 14% 20%;
+    --secondary-foreground: 120 10% 92%;
+    --muted: 152 12% 20%;
+    --muted-foreground: 150 8% 60%;
+    --accent: 152 22% 22%;
+    --accent-foreground: 147 28% 80%;
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 38% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 65% 48%;
+    --warning-foreground: 0 0% 10%;
+    --border: 152 10% 25%;
+    --input: 152 10% 25%;
+    --ring: 154 40% 45%;
+    --chart-1: 154 40% 45%;
+    --chart-2: 156 42% 35%;
+    --chart-3: 142 32% 50%;
+    --chart-4: 147 22% 60%;
+    --chart-5: 38 65% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.25s ease-out;
+  }
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pulseSoft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
